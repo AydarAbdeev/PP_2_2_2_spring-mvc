@@ -18,7 +18,7 @@ public class CarsController {
 
     @GetMapping(value = "/cars")
     public String allCArs(@RequestParam(value = "count", required = false) Long num, Model model) {
-        model.addAttribute("cars", num != null && num < 5 ? carDao.show(num) : carDao.carList());
+        model.addAttribute("cars", carDao.show(num));
         return "cars";
     }
 

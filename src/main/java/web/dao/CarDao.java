@@ -19,10 +19,8 @@ public class CarDao {
         carList.add(new Car("BMW", 8, 4.4));
     }
 
-    public List<Car> carList() {
-        return carList;
-    }
+
     public List<Car> show(Long num) {
-        return carList.subList(0, Math.toIntExact(num));
+        return num != null && num < 5 ? carList.subList(0, Math.toIntExact(num)) : carList;
     }
 }
